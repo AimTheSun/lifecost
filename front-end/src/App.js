@@ -1,10 +1,12 @@
 import "./styles/App.css";
+import React from "react";
+import Exameform from "./components/Exameform";
 
 function App() {
   return (
-    <>
-      <h1> LifeCost</h1>
-    </>
+    <div className="app">
+      <Exameform />
+    </div>
   );
 }
 
