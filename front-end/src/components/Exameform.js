@@ -4,6 +4,8 @@ import "../styles/exameForm.css";
 import Result from "./Result";
 import { getEstimateCost } from "../services/apiService";
 
+// THIS DEALS ONLY WITH DATA COLECTED
+
 // arrow function to handle the Exam form
 const ExameForm = () => {
   const [location, setLocation] = useState(""); // state to store location
@@ -30,7 +32,7 @@ const ExameForm = () => {
 
   return (
     <div className="exam-form">
-      <h1> Price Estimator about Health Exams </h1>
+      <h1> Price Estimator for Health Exams </h1>
       <form onSubmit={handleSubmit}>
         <div className="input-group">
           <label htmlFor="location">Cidade:</label>
@@ -43,7 +45,7 @@ const ExameForm = () => {
           />
         </div>
         <div className="input-group">
-          <label htmlFor="examType">Exame:</label>
+          <label htmlFor="examType">Exam:</label>
           <input
             type="text"
             id="examType"
