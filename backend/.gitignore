@@ -1,0 +1,12 @@
+# Ignorar o arquivo de variáveis de ambiente
+.env
+
+# Ignorar node_modules
+node_modules/
+
+# Ignorar logs
+*.log
+
+# Ignorar arquivos do sistema, como Thumbs.db e .DS_Store
+Thumbs.db
+.DS_Store

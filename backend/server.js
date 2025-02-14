@@ -1,8 +1,11 @@
-// I will comment to know my knowledge
+const path = require("path");
+require("dotenv").config({ path: path.resolve(__dirname, "config.env") });
 
+
+console.log("Environment variables loaded:", process.env);
 const express = require("express");
+
 const app = express();
-const bodyParser = require("body-parser");
 const port = 5000;
 
 const examController = require("./controllers/exameController");
@@ -11,7 +14,7 @@ const examController = require("./controllers/exameController");
 const cors = require("cors");
 app.use(cors()); // This will Enable CORS for all requests
 
-app.use(bodyParser.json()); // To read the data from the request body (from the json)
+app.use(express.json()); // To read the data from the request body (from the json)
 
 app.post("/api/estimate-cost", examController.estimateCost); // This will call the Controller
 

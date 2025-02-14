@@ -1,13 +1,14 @@
+require("dotenv").config(); // Certifique-se de carregar variáveis do .env
+console.log("API Key:", process.env.OPENAI_API_KEY);
+
 const axios = require("axios");
-const { response } = require("express");
 
 const getCostEstimate = async (location, examType) => {
-  // Call the API from OpenAI
   try {
     const openAiResponse = await axios.post(
-      "https://api.openai.com/v1/chat/completions", // URL correta da OpenAI
+      "https://api.openai.com/v1/chat/completions",
       {
-        model: "gpt-3.5-turbo", // Usando o modelo correto
+        model: "gpt-4o-mini",
         messages: [
           {
             role: "system",
@@ -22,17 +23,19 @@ const getCostEstimate = async (location, examType) => {
       },
       {
         headers: {
-          Authorization: `Bearer YOUR_API_KEY`, // Substitua YOUR_API_KEY pela sua chave da API
+          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`, // Usa a variável de ambiente
+          "Content-Type": "application/json", // Adiciona o Content-Type correto
         },
       }
     );
 
-    // Extract data from the response
-    const responseMessage = openAiResponse.data.choises[0].message.content;
-
-    return responseMessage;
+    return openAiResponse.data.choices[0].message.content;
   } catch (error) {
-    throw new Error("Error obtaining the API");
+    console.error(
+      "Erro ao obter estimativa de custo:",
+      error.response ? error.response.data : error.message
+    );
+    throw new Error("Erro ao obter estimativa de custo");
   }
 };
 
