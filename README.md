@@ -80,3 +80,13 @@ To run LifeCost locally:
 
 ---
 
+## Technologies Used
+
+- React.js
+- Node.js & Express
+- OpenAI API
+- AWS Lambda & AWS Amplify
+- JWT Authentication
+
+---
+
