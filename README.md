@@ -11,7 +11,7 @@ LifeCost is built with the following technologies:
 - **Backend**: Node.js with Express
 - **Database**: Not required (uses OpenAI API for estimation)
 - **Authentication**: JWT
-- **Deployment**: AWS Lambda (backend) and AWS Amplify (frontend)
+- **Deployment**: AWS Lambda (backend) and AWS Amplify (frontend) - ** NOT DEPLOYED YET **
 
 ### Features
 - Get estimated prices for medical exams.
