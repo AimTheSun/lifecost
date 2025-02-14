@@ -20,3 +20,16 @@ LifeCost is built with the following technologies:
 - Secure API integration with OpenAI for price estimation.
 
 ---
+## Challenges Faced
+
+### API Key Security
+Initially, the API key for OpenAI was mistakenly pushed to the repository. To fix this, the key was removed, and best practices were implemented:
+- Added `config.env` to `.gitignore` to prevent secrets from being tracked.
+- Used environment variables for sensitive information.
+- Cleared the repository history to remove any exposed keys.
+
+### Deployment Strategy
+Finding a cost-effective and scalable deployment method was a challenge. AWS Lambda was chosen for the backend to reduce costs, while the frontend is deployed via AWS Amplify for a seamless experience.
+
+---
+
