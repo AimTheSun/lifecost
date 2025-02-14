@@ -89,4 +89,28 @@ To run LifeCost locally:
 - JWT Authentication
 
 ---
+## How to Contribute
+
+If you'd like to contribute to LifeCost:
+
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Description of changes"
+   ```
+4. Push to your branch:
+   ```bash
+   git push origin feature-name
+   ```
+5. Open a Pull Request.
+
+---
+
+
+
+
 
