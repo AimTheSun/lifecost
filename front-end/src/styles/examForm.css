@@ -1,12 +1,10 @@
-/* MODULAR CSS */
-
 .exam-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  border: 1px solid #ddd;
-  background-color: #f0b0b0;
+  border: 1px solid var(--border-color);
+  background-color: var(--form-bg);
   border-radius: 30px;
 }
 
@@ -23,14 +21,14 @@ label {
 input {
   padding: 10px;
   width: 200px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 30px;
 }
 
 button {
   padding: 10px 20px;
-  background-color: #63d367;
-  color: rgb(28, 17, 17);
+  background-color: var(--button-bg);
+  color: var(--button-text);
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -40,10 +38,17 @@ button:disabled {
   background-color: #ccc;
 }
 
-.result {
-  margin-top: 20px;
-  padding: 15px;
-  border: 1px solid #c75c5c;
-  border-radius: 20px;
-  background-color: #c38888;
+/* Dark/Light mode styles */
+:root {
+  --form-bg: #f0b0b0;
+  --border-color: #ddd;
+  --button-bg: #63d367;
+  --button-text: #1c1111;
+}
+
+.dark-theme {
+  --form-bg: #5a3d3d;
+  --border-color: #555;
+  --button-bg: #3f803f;
+  --button-text: #fff;
 }

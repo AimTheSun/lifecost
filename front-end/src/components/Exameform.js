@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "../services/apiService";
-import "../styles/exameForm.css";
+import "../styles/examForm.css";
 import Result from "./Result";
 import { getEstimateCost } from "../services/apiService";
 
 // THIS DEALS ONLY WITH DATA COLECTED
 
 // arrow function to handle the Exam form
-const ExameForm = () => {
+const ExamForm = () => {
   const [location, setLocation] = useState(""); // state to store location
   const [examType, setExamType] = useState(""); // state to store exam type
   const [result, setResult] = useState(null); // result starts null
@@ -35,7 +35,7 @@ const ExameForm = () => {
       <h1> Price Estimator for Health Exams </h1>
       <form onSubmit={handleSubmit}>
         <div className="input-group">
-          <label htmlFor="location">Cidade:</label>
+          <label htmlFor="location">City:</label>
           <input
             type="text"
             id="location"
@@ -68,4 +68,4 @@ const ExameForm = () => {
   );
 };
 
-export default ExameForm;
+export default ExamForm;

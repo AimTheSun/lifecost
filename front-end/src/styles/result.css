@@ -1,3 +1,11 @@
+.result {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid var(--result-border);
+  border-radius: 20px;
+  background-color: var(--result-bg);
+}
+
 .result h3 {
   font-size: 18px;
   margin: 0;
@@ -5,5 +13,16 @@
 
 .result p {
   font-size: 16px;
-  color: #333;
+  color: var(--text-color);
+}
+
+/* Dark/Light Mode */
+:root {
+  --result-bg: #c38888;
+  --result-border: #c75c5c;
+}
+
+.dark-theme {
+  --result-bg: #4a2b2b;
+  --result-border: #9a4a4a;
 }
