@@ -1,14 +1,16 @@
 .result {
   margin-top: 20px;
-  padding: 15px;
+  padding: 18px;
   border: 1px solid var(--result-border);
-  border-radius: 20px;
+  border-radius: 12px;
   background-color: var(--result-bg);
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .result h3 {
-  font-size: 18px;
+  font-size: 20px;
   margin: 0;
+  color: var(--text-color);
 }
 
 .result p {
@@ -16,13 +18,12 @@
   color: var(--text-color);
 }
 
-/* Dark/Light Mode */
 :root {
-  --result-bg: #c38888;
-  --result-border: #c75c5c;
+  --result-bg: #e0f7fa; /* Fundo do resultado no modo claro */
+  --result-border: #00bcd4; /* Borda do resultado */
 }
 
 .dark-theme {
-  --result-bg: #4a2b2b;
-  --result-border: #9a4a4a;
+  --result-bg: #37474f; /* Fundo do resultado no modo escuro */
+  --result-border: #607d8b; /* Borda do resultado no modo escuro */
 }
