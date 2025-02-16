@@ -1,11 +1,13 @@
 import "./styles/App.css";
 import React from "react";
-import Exameform from "./components/Exameform";
+import Examform from "./components/Examform.js";
+import DockDemo from "./components/dockDemo";
 
 function App() {
   return (
     <div className="app">
-      <Exameform />
+      <Examform />
+      <DockDemo />
     </div>
   );
 }
