@@ -4,26 +4,58 @@
   border: 1px solid var(--result-border);
   border-radius: 12px;
   background-color: var(--result-bg);
-  transition: background-color 0.3s, border-color 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
 .result h3 {
-  font-size: 20px;
-  margin: 0;
+  font-size: 22px;
+  margin-bottom: 10px;
   color: var(--text-color);
 }
 
 .result p {
   font-size: 16px;
+  margin: 5px 0;
   color: var(--text-color);
+}
+
+.result ul {
+  list-style: none;
+  padding: 0;
+}
+
+.result li {
+  font-size: 16px;
+  margin: 6px 0;
+  padding: 8px;
+  background-color: var(--list-bg);
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.result li strong {
+  color: var(--highlight-color);
 }
 
 :root {
   --result-bg: #e0f7fa; /* Fundo do resultado no modo claro */
   --result-border: #00bcd4; /* Borda do resultado */
+  --text-color: #333; /* Cor do texto no modo claro */
+  --list-bg: #b2ebf2; /* Fundo dos itens da lista */
+  --highlight-color: #00796b; /* Cor de destaque */
 }
 
 .dark-theme {
   --result-bg: #37474f; /* Fundo do resultado no modo escuro */
   --result-border: #607d8b; /* Borda do resultado no modo escuro */
+  --text-color: #eceff1; /* Cor do texto no modo escuro */
+  --list-bg: #455a64; /* Fundo dos itens da lista no modo escuro */
+  --highlight-color: #80cbc4; /* Cor de destaque no modo escuro */
+}
+
+.result li:hover {
+  background-color: var(--highlight-color);
+  color: white;
+  cursor: pointer;
 }

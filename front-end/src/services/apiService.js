@@ -1,15 +1,16 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/estimate-cost"; //URL do backend
-
 export const getEstimateCost = async (location, examType) => {
   try {
-    const response = await axios.post(API_URL, {
-      location,
-      examType,
-    });
-    return response.data.message; // Retorn message from the API
+    const response = await axios.post(
+      "http://localhost:5000/api/estimate-cost",
+      { location, examType }
+    );
+
+    console.log("Backend response:", response.data); // <-- Aqui!
+    return response.data;
   } catch (error) {
+    console.error("Error fetching estimate cost:", error);
     throw new Error("Error fetching estimate cost");
   }
 };

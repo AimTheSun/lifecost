@@ -17,6 +17,7 @@ body {
   color: var(--text-color);
   font-family: "Arial", sans-serif;
   transition: background-color 0.3s, color 0.3s;
+  padding-bottom: 80px;
 }
 
 /* Light/Dark Mode */

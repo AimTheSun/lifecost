@@ -1,38 +1,52 @@
 import React, { useState } from "react";
-import "../services/apiService";
 import "../styles/examForm.css";
-import Result from "./Result";
 import { getEstimateCost } from "../services/apiService";
+import Result from "./Result";
 
-// THIS DEALS ONLY WITH DATA COLECTED
-
-// arrow function to handle the Exam form
+// Component responsible for handling the exam search form
 const ExamForm = () => {
-  const [location, setLocation] = useState(""); // state to store location
-  const [examType, setExamType] = useState(""); // state to store exam type
-  const [result, setResult] = useState(null); // result starts null
-  const [error, setError] = useState(null); // error starts null
-  const [loading, setLoading] = useState(false); // loading starts false
+  const [location, setLocation] = useState(""); // Stores the city input
+  const [examType, setExamType] = useState(""); // Stores the exam type input
+  const [result, setResult] = useState(null); // Stores API results
+  const [error, setError] = useState(null); // Stores error messages
+  const [loading, setLoading] = useState(false); // Indicates if the request is in progress
 
-  // function to handle form submission
+  // Handles form submission
   const handleSubmit = async (e) => {
-    e.preventDefault(); // prevent default form submission behavior
-    setLoading(true); // set loading to true
-    setError(null); // reset error state
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
 
     try {
       const estimatedCost = await getEstimateCost(location, examType);
-      setResult(estimatedCost); // update result state with estimated cost
+      console.log("Raw estimated cost data:", estimatedCost);
+
+      // Extracts data correctly from API response
+      const formattedResult = {
+        priceRange:
+          estimatedCost.message?.priceRange || "No price range available", 
+        waitingTime:
+          estimatedCost.message?.waitingTime || "No waiting time available", 
+        hospitals:
+          estimatedCost.message?.hospitals?.map((hospital) => ({
+            name: hospital.name || "No name available", 
+            address: hospital.address || "No address available",
+            phone: hospital.phone || "No phone number available", 
+          })) || [],
+      };
+
+      console.log("Updated result state:", formattedResult);
+      setResult(formattedResult);
     } catch (error) {
-      setError(error.message); // set error message
+      setError(error.message);
     } finally {
-      setLoading(false); // set loading to false after the request is done
+      setLoading(false);
     }
   };
 
   return (
     <div className="exam-form">
-      <h1> Price Estimator for Health Exams </h1>
+      <h1>Price Estimator for Health Exams</h1>
       <form onSubmit={handleSubmit}>
         <div className="input-group">
           <label htmlFor="location">City:</label>
@@ -44,6 +58,7 @@ const ExamForm = () => {
             required
           />
         </div>
+
         <div className="input-group">
           <label htmlFor="examType">Exam:</label>
           <input
@@ -54,15 +69,20 @@ const ExamForm = () => {
             required
           />
         </div>
+
         <button type="submit" disabled={loading}>
-          {loading ? "Thinking..." : "Getting price range"}
+          {loading ? "Thinking..." : "Get Price Estimate"}
         </button>
       </form>
+
+      {/* Displays error message if an error occurs */}
       {error && (
         <p className="error" style={{ color: "red" }}>
           {error}
         </p>
       )}
+
+      {/* Displays results if data is available */}
       {result && <Result message={result} />}
     </div>
   );

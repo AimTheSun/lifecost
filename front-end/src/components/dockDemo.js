@@ -5,6 +5,8 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 export default function DockDemo({ onThemeToggle, isDarkMode }) {
+  
+
   return (
     <div className="dock">
       <div className="dock-icon">

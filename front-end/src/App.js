@@ -1,21 +1,23 @@
-import "./styles/App.css";
 import React, { useState } from "react";
-import Examform from "./components/Examform";
+import ExamForm from "./components/ExamForm";
 import DockDemo from "./components/dockDemo";
+import "./styles/App.css"; 
 
-function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false); // Controle de tema no App
+const App = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
+  // Handles theme toggle
   const handleThemeToggle = () => {
-    setIsDarkMode((prevState) => !prevState); // Alterna entre light/dark mode
+    setIsDarkMode((prevMode) => !prevMode);
+    document.documentElement.classList.toggle("dark-theme");
   };
 
   return (
     <div className={`app ${isDarkMode ? "dark-theme" : ""}`}>
-      <Examform />
+      <ExamForm />
       <DockDemo onThemeToggle={handleThemeToggle} isDarkMode={isDarkMode} />
     </div>
   );
-}
+};
 
 export default App;
