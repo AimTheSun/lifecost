@@ -4,14 +4,12 @@ const { fetchHospitalsFromGooglePlaces } = require("./hospitalGoogle");
 
 const getCostEstimate = async (location, examType) => {
   try {
-    // Fetch hospital data from Google Places
     const hospitals = await fetchHospitalsFromGooglePlaces(location);
 
-    // Fetch estimated cost and waiting time from OpenAI
     const openAiResponse = await axios.post(
       "https://api.openai.com/v1/chat/completions",
       {
-        model: "gpt-4o", // Make sure to use the correct OpenAI model
+        model: "gpt-4o",
         messages: [
           {
             role: "system",
