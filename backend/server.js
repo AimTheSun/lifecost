@@ -1,8 +1,6 @@
 const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "config.env") });
 
-
-console.log("Environment variables loaded:", process.env);
 const express = require("express");
 
 const app = express();
