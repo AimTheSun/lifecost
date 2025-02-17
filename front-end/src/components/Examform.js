@@ -20,8 +20,6 @@ const ExamForm = () => {
     try {
       const estimatedCost = await getEstimateCost(location, examType);
       console.log("Raw estimated cost data:", estimatedCost);
-
-      // Extracts data correctly from API response
       const formattedResult = {
         priceRange:
           estimatedCost.message?.priceRange || "No price range available", 
@@ -74,15 +72,12 @@ const ExamForm = () => {
           {loading ? "Thinking..." : "Get Price Estimate"}
         </button>
       </form>
-
-      {/* Displays error message if an error occurs */}
       {error && (
         <p className="error" style={{ color: "red" }}>
           {error}
         </p>
       )}
 
-      {/* Displays results if data is available */}
       {result && <Result message={result} />}
     </div>
   );

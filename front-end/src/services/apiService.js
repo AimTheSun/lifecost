@@ -7,7 +7,7 @@ export const getEstimateCost = async (location, examType) => {
       { location, examType }
     );
 
-    console.log("Backend response:", response.data); // <-- Aqui!
+    console.log("Backend response:", response.data);
     return response.data;
   } catch (error) {
     console.error("Error fetching estimate cost:", error);

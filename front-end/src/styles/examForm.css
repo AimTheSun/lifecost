@@ -7,6 +7,7 @@
   background-color: var(--form-bg);
   border-radius: 12px;
   transition: background-color 0.3s, border-color 0.3s;
+  flex: 1;
 }
 
 .input-group {
@@ -53,17 +54,17 @@ button:disabled {
 }
 
 :root {
-  --form-bg: #ffffff; /* Fundo do formulário claro */
-  --border-color: #e0e0e0; /* Borda do formulário */
-  --button-bg: #4caf50; /* Fundo do botão */
-  --button-text: #ffffff; /* Cor do texto do botão */
-  --button-bg-hover: #45a049; /* Fundo do botão ao passar o mouse */
+  --form-bg: #ffffff; 
+  --border-color: #e0e0e0; 
+  --button-bg: #4caf50; 
+  --button-text: #ffffff; 
+  --button-bg-hover: #45a049; 
 }
 
 .dark-theme {
-  --form-bg: #333; /* Fundo do formulário escuro */
-  --border-color: #444; /* Borda do formulário no modo escuro */
-  --button-bg: #5f9ea0; /* Fundo do botão no modo escuro */
-  --button-text: #ffffff; /* Cor do texto do botão no modo escuro */
-  --button-bg-hover: #4e8c89; /* Fundo do botão ao passar o mouse no modo escuro */
+  --form-bg: #333; 
+  --border-color: #444; 
+  --button-bg: #5f9ea0; 
+  --button-text: #ffffff; 
+  --button-bg-hover: #4e8c89;
 }
