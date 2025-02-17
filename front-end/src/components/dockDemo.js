@@ -5,7 +5,6 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 export default function DockDemo({ onThemeToggle, isDarkMode }) {
-
   return (
     <div className="dock">
       <div className="dock-icon">
@@ -38,7 +37,7 @@ export default function DockDemo({ onThemeToggle, isDarkMode }) {
       <div className="dock-icon" onClick={onThemeToggle}>
         <FontAwesomeIcon
           icon={isDarkMode ? faSun : faMoon}
-          size="2x"
+          size="2.2x"
           className="theme-toggle"
         />
       </div>
