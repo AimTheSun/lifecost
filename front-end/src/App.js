@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ExamForm from "./components/ExamForm";
+import ExamForm from "./components/Examform";
 import DockDemo from "./components/dockDemo";
 import "./styles/App.css";
 
