@@ -3,10 +3,9 @@ import axios from "axios";
 export const getEstimateCost = async (location, examType) => {
   try {
     const response = await axios.post(
-      "http://localhost:5000/api/estimate-cost",
+      `${process.env.REACT_APP_API_BASE_URL}/api/estimate-cost`,
       { location, examType }
     );
-
     console.log("Backend response:", response.data);
     return response.data;
   } catch (error) {
